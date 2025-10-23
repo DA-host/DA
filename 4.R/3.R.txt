@@ -1,0 +1,29 @@
+Q3: Employee Payroll Analysis Using Data Frame
+You are assigned to analyze employee payroll data using a data frame in R. The company has 5
+employees, and their data includes: Name, Age, Department, Basic Salary, and Bonus. Your goal is to
+create a data frame and perform operations to assist the HR department in salary analysis.
+Tasks:
+1. Create a data frame named employees with the following columns:
+i. Name (character), Age (numeric), Department (character), Basic Salary (numeric), Bonus
+(numeric)
+2. Add a new column to calculate the Total Salary for each employee (Basic + Bonus).
+3. Identify:
+i. The highest paid employee
+ii. The average salary by department using the aggregate() function
+4. Filter and display employees earning a total salary above ₹60,000.
+PROGRAM:
+employees <- data.frame(
+ Name = c("A", "B", "C", "D", "E"),
+ Age = c(30, 25, 29, 35, 32),
+ Department = c("HR", "Finance", "IT", "HR", "IT"),
+ Basic = c(40000, 50000, 45000, 47000, 66000),
+ Bonus = c(5000, 6000, 5500, 5000, 6500)
+)
+# Total Salary
+employees$Total <- employees$Basic + employees$Bonus
+# Highest Paid
+employees[which.max(employees$Total), ]
+# Avg salary by dept
+aggregate(Total ~ Department, data = employees, FUN = mean)
+# Salary > 60000
+subset(employees, Total > 60000)

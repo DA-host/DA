@@ -1,0 +1,20 @@
+Q2: Monthly Rainfall Analysis using Vector
+You are provided with the monthly rainfall (in mm) for a city over a year, stored in a numeric
+vector of 12 values. Your task is to analyze this vector using R vector operations to extract useful
+insights. Specifically, you need to:
+1. Find the total annual rainfall.
+2. Calculate the average monthly rainfall.
+3. Identify the wettest and driest months.
+4. Count how many months had above-average rainfall.
+5. Display the names of the months corresponding to rainfall values.
+Input Vector: rainfall - 56, 78, 65, 120, 140, 160, 180, 150, 110, 90, 70, 60
+PROGRAM:
+rainfall <- c(56,78,65,120,140,160,180,150,110,90,70,60)
+sum(rainfall)
+avg <- mean(rainfall)
+print(avg)
+month <-month.name
+month[which.max(rainfall)]
+month[which.min(rainfall)]
+sum(rainfall > avg)
+data.frame(Month=month,Rainfall=rainfall)
