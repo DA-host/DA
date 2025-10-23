@@ -1,0 +1,22 @@
+AIM:
+To implement and analyze linear and logistic regression models using R.
+PROGRAM:
+library(ggplot2)
+data(mtcars)#load the dataset
+model <- lm(mpg~wt,data = mtcars)
+mtcars_mpg_wt <- ggplot(data = mtcars,aes(x=wt,y=mpg))+
+ geom_point()+
+ geom_smooth(method = 'lm')+
+ labs(title="Linear Regression")
+print(mtcars_mpg_wt)
+
+library(ggplot2)
+data(mtcars)
+mtcars$high_mpg <- ifelse(mtcars$mpg > 20, 1, 0)
+model_logistic <- glm(high_mpg ~ wt, data = mtcars, family = binomial)
+mpg_wt <- ggplot(data = mtcars, aes(x = wt, y = high_mpg)) +
+ geom_point() +
+ geom_smooth(method = "glm", method.args = list(family = "binomial")) +
+ labs(title = "Logistic Regression", x = "Weight (wt)", y = "High MPG (1 = mpg > 20)") +
+ theme_minimal()
+print(mpg_wt)

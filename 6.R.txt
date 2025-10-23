@@ -1,0 +1,38 @@
+AIM:
+To perform data reshaping and merging operations using R for effective data manipulation.
+PROGRAM:
+library(dplyr)
+df1 = data.frame(ID=1:5,NAME=c("ONE","TWO","THREE","FOUR","FIVE"))
+df2 = data.frame(ID=1:3,MARKS=c(80,90,85))
+print(df1)
+print(df2)
+#innerjoin
+innerjoin = merge(df1,df2,by="ID")
+print(innerjoin)
+#leftjoin
+leftjoin= merge(df1,df2,by="ID",all.x = TRUE)
+print(leftjoin)
+#rightjoin
+rightjoin = merge(df1,df2,by="ID",all.y=TRUE)
+print(rightjoin)
+#fulljoin
+fulljoin = merge(df1,df2,by="ID",all=TRUE)
+print(fulljoin)
+
+library(tidyr)
+card = data.frame(ID=1:5,
+NAME=c("ONE","TWO","THREE","FOUR","FIVE"),
+ SCORE = c(90,94,85,88,90))
+print(card)
+card$SCORE=as.character(card$SCORE)
+#wide to long
+pivotlong=pivot_longer(card,
+ cols = c(NAME,SCORE),
+ names_to = "variable",
+ values_to= "value")
+print(pivotlong)
+#long to wide
+pivotwide=pivot_wider(pivotlong,
+ names_from = variable,
+ values_from = value)
+print(pivotwide)
