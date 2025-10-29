@@ -1,6 +1,4 @@
-AIM:
-To implement data clustering using K-Means in R.
-PROGRAM:
+
 data(iris)
 head(iris)
 install.packages("factoextra")
@@ -28,4 +26,5 @@ ggplot(iris_1, aes(x = Sepal.Length, y = Sepal.Width, color = cluster)) +
  size = 5, shape = 4, stroke = 2) +
  labs(title = "K-Means Cluster", x = "Sepal Length", y = "Sepal Width") +
  theme_minimal() +
+
  theme(legend.title = element_blank())
