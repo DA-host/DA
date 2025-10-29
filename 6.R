@@ -1,6 +1,3 @@
-AIM:
-To perform data reshaping and merging operations using R for effective data manipulation.
-PROGRAM:
 library(dplyr)
 df1 = data.frame(ID=1:5,NAME=c("ONE","TWO","THREE","FOUR","FIVE"))
 df2 = data.frame(ID=1:3,MARKS=c(80,90,85))
@@ -35,4 +32,5 @@ print(pivotlong)
 pivotwide=pivot_wider(pivotlong,
  names_from = variable,
  values_from = value)
+
 print(pivotwide)
