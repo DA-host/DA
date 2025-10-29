@@ -1,6 +1,4 @@
-AIM:
-To visualize data in R using scatter plots, histograms, dot plots, box plots, using the ggplot package.
-PROGRAM:
+
 library(ggplot2)
 ggplot(mtcars, aes(x = hp, y = mpg)) +
  geom_point(color = "red", size = 3) +
@@ -18,4 +16,5 @@ ggplot(mtcars, aes(x = factor(cyl), y = mpg)) +
 ggplot(mtcars, aes(x = mpg)) +
  geom_dotplot(binwidth = 1, fill = "lightblue") +
  labs(title = "Dotplot: MPG Distribution", x = "Miles per Gallon", y = "Count") +
+
  theme_minimal()
