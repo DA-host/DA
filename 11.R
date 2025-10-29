@@ -1,12 +1,5 @@
-AIM:
-To preprocess a corpus of text data by cleaning, stemming, and removing stop words in R. Then, to
-analyze word frequencies, perform sentiment analysis, and classify documents into categories.
-1. Write an R program to
-a. create a corpus of documents and preprocess them in R using stemming, stop word removal,
-whitespace removal, convert them to lowercase and remove punctuations.
-b. create a term document matrix for a corpus in R.
-c. Generate word frequency visualization
-PROGRAM:
+
+
 # Install required packages if not already installed
 if(!require(tm)) install.packages("tm", dependencies = TRUE)
 if(!require(SnowballC)) install.packages("SnowballC", dependencies = TRUE)
@@ -73,9 +66,7 @@ set.seed(1234)
 wordcloud(words = names(word_freq), freq = word_freq,
 min.freq = 1,
 max.words = 100 , random.order = FALSE,colors = brewer.pal(8, "Dark2"))
-2. Write an R program to perform sentiment analysis from a corpus of document and Perform
-sentiment polarity classification (positive, negative, neutral)
-PROGRAM:
+
 # Install required packages (only if not already installed)
 if(!require(tm)) install.packages("tm", dependencies = TRUE)
 if(!require(SnowballC)) install.packages("SnowballC", dependencies = TRUE)
@@ -184,9 +175,7 @@ xlab = "Sentiment Type")
 
 
 
-3. Write an R program to Classify news articles into topics like sports, tech, politics, etc.
-using dataset
-PROGRAM
+
 # Load required libraries
 # - readr: For fast CSV reading.
 # - tm: For text corpus creation, cleaning, and DTM.
@@ -343,4 +332,5 @@ print("Prediction Results for New Articles:")
 print(results_df)
 # Manual accuracy on new set (for demo)
 manual_accuracy <- mean(new_articles$Expected_Topic == new_predictions)
+
 print(paste("Manual Accuracy on New Articles:", round(manual_accuracy * 100, 2), "%"))
