@@ -1,7 +1,4 @@
-AIM:
-To calculate and analyze basic statistical measures such as mean, median, and mode
-using R.
-PROGRAM:
+
 library(psych)
 avg_rainfall = data.frame(month = month.name , rainfall = c(10,10,10,10,10,560,
 640,520,320,90,20,10))
@@ -23,4 +20,5 @@ harmonic.mean(avg_rainfall$rainfall)
 #1stquartile
 quantile(avg_rainfall$rainfall,0.25)
 #56quartile
+
 quantile(avg_rainfall$rainfall,0.56)
