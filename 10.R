@@ -1,6 +1,4 @@
-AIM:
-To implement decision tree-based classification in R.
-PROGRAM:
+
 library(rpart)
 install.packages("rpart.plot")
 library(rpart.plot)
@@ -17,3 +15,4 @@ tree_model <- rpart(Species ~ .,
 rpart.plot(tree_model, box.palette = "auto", nn = TRUE)
 predictions <- predict(tree_model, test_data, type = "class")
 confusionMatrix(predictions, test_data$Species)
+
