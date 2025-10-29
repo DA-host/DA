@@ -1,6 +1,4 @@
-AIM:
-To implement and analyze linear and logistic regression models using R.
-PROGRAM:
+
 library(ggplot2)
 data(mtcars)#load the dataset
 model <- lm(mpg~wt,data = mtcars)
@@ -19,4 +17,5 @@ mpg_wt <- ggplot(data = mtcars, aes(x = wt, y = high_mpg)) +
  geom_smooth(method = "glm", method.args = list(family = "binomial")) +
  labs(title = "Logistic Regression", x = "Weight (wt)", y = "High MPG (1 = mpg > 20)") +
  theme_minimal()
+
 print(mpg_wt)
